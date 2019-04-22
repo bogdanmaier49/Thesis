@@ -1,0 +1,57 @@
+@import './components/header/Header.scss';
+@import './components/loginForm/LoginForm.scss';
+
+@import './views/loginView/LoginView.scss';
+
+body, #root {
+	min-height: 100vh;
+}
+
+.view-container {
+	height: 100%;
+	width: 100%;
+}
+
+.card-container {
+	-webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.4);
+	-moz-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.4);
+	box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.4);
+
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+
+	padding: 20px;
+}
+
+button {
+	background-color: transparent;
+	border: 1px solid lightgray;
+	padding: 12px 25px;
+	cursor: pointer;
+	font-size: 10pt;
+
+	transition: 0.3s ease;
+}
+
+button:hover {
+	background-color: lightgray;
+	color: white;
+}
+
+input:focus{
+	outline: none;
+
+	border: 2px solid lightgray;
+}
+
+input {
+	font-size: 10pt;
+	padding: 6px 10px;
+
+	transition: 0.3s ease;
+
+	border: 2px solid transparent;
+	border-bottom: 2px solid lightgray;
+}

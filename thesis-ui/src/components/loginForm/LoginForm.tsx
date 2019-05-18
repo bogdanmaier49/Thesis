@@ -37,7 +37,7 @@ export default class LoginForm extends React.Component<ILoginFormProps, ILoginFo
 
                 </div>
                 <div className='button-container'>
-                    <button onClick={this.handleOnLoginClick}> Login </button>
+                    <button onClick={this.handleOnLoginClick} > Login </button>
                 </div>
             </div>
         );

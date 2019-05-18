@@ -1,5 +1,7 @@
 @import './components/header/Header.scss';
 @import './components/loginForm/LoginForm.scss';
+@import './components/modal/Modal.scss';
+@import './components/loader/Loader.scss';
 
 @import './views/loginView/LoginView.scss';
 
@@ -25,33 +27,27 @@ body, #root {
 	padding: 20px;
 }
 
-button {
-	background-color: transparent;
-	border: 1px solid lightgray;
-	padding: 12px 25px;
-	cursor: pointer;
-	font-size: 10pt;
 
-	transition: 0.3s ease;
-}
+  .table-view {
+	  width: 100%;
+	  height: 100%;
+	  display: grid;
+	  grid-template-columns: 75% 25%;
+  }
 
-button:hover {
-	background-color: lightgray;
-	color: white;
-}
+  .table-view .table-view-section {
+	  padding: 20px;
+  }
 
-input:focus{
-	outline: none;
+  .table-view .table-view-section button {
+	  width: 100%;
+  }
 
-	border: 2px solid lightgray;
-}
+  .width100 {
+	  width: 100%;
+  }
 
-input {
-	font-size: 10pt;
-	padding: 6px 10px;
-
-	transition: 0.3s ease;
-
-	border: 2px solid transparent;
-	border-bottom: 2px solid lightgray;
-}
+  a {
+	  cursor: pointer;
+	  color: blue;
+  }

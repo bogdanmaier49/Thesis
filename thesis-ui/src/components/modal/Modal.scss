@@ -1,0 +1,39 @@
+.modal-parent {
+    width: 100%;
+    height: 100%;
+
+    position: fixed;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(0, 0, 0, 0.6);
+
+    z-index: 99;
+}
+
+.modal {
+    padding: 15px;
+    min-width: 200px;
+
+    background-color: white;
+}
+
+.modal-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    border-top: 1px solid lightgray;
+    
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.modal-buttons {
+    border-top: 1px solid lightgray;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}

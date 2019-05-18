@@ -1,12 +1,21 @@
 import * as React from 'react';
 import { loggedIn } from '../../service/client';
 
+export interface IHeaderMenuButton {
+    label: string;
+    onClick: () => void;
+}
+
 interface IHeaderProps {
     onLogoutClick: () => void;
     onLoginClick: () => void;
 
     userDisplayName?: string;
     onClickUserDisplayName?: () => void;
+
+    buttons: IHeaderMenuButton[];
+
+    handleMenu?: () => any;
 }
 
 export const Header = (props: IHeaderProps): JSX.Element => (
@@ -14,9 +23,9 @@ export const Header = (props: IHeaderProps): JSX.Element => (
     <header>
 
         <div className='section left-buttons'>
-            <button> Button 1 </button>
-            <button> Button 2 </button>
-            <button> Button 3 </button>
+            {props.buttons.map((button: IHeaderMenuButton, index: number) => (
+                <button key={'menu-button-' + index} onClick={button.onClick}> {button.label} </button>
+            ))}
         </div>
 
         <div className='section logo'>

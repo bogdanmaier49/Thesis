@@ -4,6 +4,8 @@ import axios from 'axios';
 export const BASE_LINK = 'http://localhost:9090';
 export const USERS_LINK = '/users';
 export const LOGIN_LINK = '/login';
+export const PRODUCERS_LINK = '/producer';
+export const COUNTRY_LINK = '/country';
 
 export const LOCAL_STORAGE_TOKEN_KEY = 'token';
 
@@ -20,6 +22,18 @@ export interface User {
     password?: string;
     addedDate?: string;
     userDetails?: UserDetails;
+}
+
+export interface Producer {
+    id?: number;
+    name?: string;
+    country?: Country;
+}
+
+export interface Country { 
+    id?: number;
+    name?: string;
+    code?: string;  
 }
 
 export const loggedIn = (): boolean => {
@@ -70,6 +84,51 @@ export const GET_loggedInUser = (token: string) => {
         Authorization: token
     };
     return axios.get(BASE_LINK + USERS_LINK + '/loggedin', {
+        headers: headers
+    });
+}
+
+export const GET_Producers = (token: string) => {
+    let headers = {
+        Authorization: token
+    };
+    return axios.get(BASE_LINK + USERS_LINK + PRODUCERS_LINK, {
+        headers: headers
+    });
+}
+
+export const doGET = (link: string, token?: string) => {
+    let headers = {
+        Authorization: token
+    };
+    return axios.get(BASE_LINK + link, {
+        headers: headers
+    });
+}
+
+export const doPOST = (link: string, data: any, token?: string) => {
+    let headers = {
+        Authorization: token
+    };
+    return axios.post(BASE_LINK + link, data, {
+        headers: headers
+    });
+}
+
+export const doDELETE = (link: string, token?: string) => {
+    let headers = {
+        Authorization: token
+    };
+    return axios.delete(BASE_LINK + link, {
+        headers: headers
+    });
+}
+
+export const doPATCH = (link: string, data: any, token?: string) => {
+    let headers = {
+        Authorization: token
+    };
+    return axios.patch(BASE_LINK + link, data, {
         headers: headers
     });
 }
